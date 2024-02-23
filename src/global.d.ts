@@ -1,13 +1,13 @@
 declare type Point = {
     x: number;
     y: number;
-}
+};
 
 declare type ListNode<T> = {
-    value: T,
-    next?: ListNode<T>,
-    prev?: ListNode<T>,
-}
+    value: T;
+    next?: ListNode<T>;
+    prev?: ListNode<T>;
+};
 
 declare interface List<T> {
     get length(): number;
@@ -33,9 +33,9 @@ declare type BinaryNode<T> = {
     right: BinaryNode<T> | null;
 };
 
-declare type GeneralNode<T> = {
+declare type GeneralNode<T, V> = {
     value: T;
-    children: GeneralNode<T>[];
+    children: Map<V, GeneralNode<T, V>>;
 };
 
 declare interface ILRU<K, V> {
